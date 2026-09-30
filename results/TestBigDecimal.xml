@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763841080" analysisTimestamp="1790763955686" release="">
+  <Project projectName="">
+    <Jar>classes</Jar>
+    <SrcDir>/root/shots/src</SrcDir>
+  </Project>
+  <BugInstance type="DMI_BIGDECIMAL_CONSTRUCTED_FROM_DOUBLE" priority="2" rank="7" abbrev="DMI" category="CORRECTNESS">
+    <Class classname="lab4.TestBigDecimal">
+      <SourceLine classname="lab4.TestBigDecimal" start="5" end="8" sourcefile="TestBigDecimal.java" sourcepath="lab4/TestBigDecimal.java"/>
+    </Class>
+    <Method classname="lab4.TestBigDecimal" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestBigDecimal" start="7" end="8" startBytecode="0" endBytecode="62" sourcefile="TestBigDecimal.java" sourcepath="lab4/TestBigDecimal.java"/>
+    </Method>
+    <Method classname="java.math.BigDecimal" name="&lt;init&gt;" signature="(D)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.math.BigDecimal" start="967" end="968" startBytecode="0" endBytecode="64" sourcefile="BigDecimal.java" sourcepath="java/math/BigDecimal.java"/>
+    </Method>
+    <Method classname="java.math.BigDecimal" name="valueOf" signature="(D)Ljava/math/BigDecimal;" isStatic="true" role="METHOD_ALTERNATIVE_TARGET">
+      <SourceLine classname="java.math.BigDecimal" start="1371" end="1371" startBytecode="0" endBytecode="53" sourcefile="BigDecimal.java" sourcepath="java/math/BigDecimal.java"/>
+    </Method>
+    <String value="1.1"/>
+    <String value="1.100000000000000088817841970012523233890533447265625"/>
+    <SourceLine classname="lab4.TestBigDecimal" start="7" end="7" startBytecode="10" endBytecode="10" sourcefile="TestBigDecimal.java" sourcepath="lab4/TestBigDecimal.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:24:01 +0500" total_classes="8" referenced_classes="39" total_bugs="1" total_size="86" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="4.10" clock_seconds="2.15" peak_mbytes="135.08" alloc_mbytes="1496.00" gc_seconds="0.10" priority_2="1">
+    <PackageStats package="lab4" total_bugs="1" total_types="8" total_size="86" priority_2="1">
+      <ClassStats class="lab4.TestBigDecimal" sourceFile="TestBigDecimal.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="lab4.TestBigDecimalEquals" sourceFile="TestBigDecimalEquals.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="lab4.TestDate" sourceFile="TestDate.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="lab4.TestNewline" sourceFile="TestNewline.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="lab4.TestTernary" sourceFile="TestTernary.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryNull" sourceFile="TestTernaryNull.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryPrimitive" sourceFile="TestTernaryPrimitive.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="lab4.TestTernarySimpleNull" sourceFile="TestTernarySimpleNull.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="456" invocations="585" avgMicrosecondsPerInvocation="781" maxMicrosecondsPerInvocation="39179" standardDeviationMicrosecondsPerInvocation="2415"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="192" invocations="39" avgMicrosecondsPerInvocation="4941" maxMicrosecondsPerInvocation="34161" standardDeviationMicrosecondsPerInvocation="7956"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="105" invocations="148" avgMicrosecondsPerInvocation="712" maxMicrosecondsPerInvocation="16920" standardDeviationMicrosecondsPerInvocation="1651"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="101" invocations="72" avgMicrosecondsPerInvocation="1402" maxMicrosecondsPerInvocation="36051" standardDeviationMicrosecondsPerInvocation="4569"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="94" invocations="39" avgMicrosecondsPerInvocation="2416" maxMicrosecondsPerInvocation="13713" standardDeviationMicrosecondsPerInvocation="3085"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="76" invocations="39" avgMicrosecondsPerInvocation="1967" maxMicrosecondsPerInvocation="15596" standardDeviationMicrosecondsPerInvocation="3662"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="73" invocations="587" avgMicrosecondsPerInvocation="125" maxMicrosecondsPerInvocation="6981" standardDeviationMicrosecondsPerInvocation="339"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="63" invocations="545" avgMicrosecondsPerInvocation="116" maxMicrosecondsPerInvocation="5024" standardDeviationMicrosecondsPerInvocation="403"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="54" invocations="39" avgMicrosecondsPerInvocation="1397" maxMicrosecondsPerInvocation="15509" standardDeviationMicrosecondsPerInvocation="3060"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="39" invocations="39" avgMicrosecondsPerInvocation="1011" maxMicrosecondsPerInvocation="6621" standardDeviationMicrosecondsPerInvocation="1709"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="37" invocations="39" avgMicrosecondsPerInvocation="965" maxMicrosecondsPerInvocation="7684" standardDeviationMicrosecondsPerInvocation="1754"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

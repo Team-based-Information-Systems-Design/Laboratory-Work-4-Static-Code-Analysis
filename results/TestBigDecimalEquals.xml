@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763841080" analysisTimestamp="1790763963627" release="">
+  <Project projectName="">
+    <Jar>classes</Jar>
+    <SrcDir>/root/shots/src</SrcDir>
+    <Plugin id="com.mebigfatguy.fbcontrib" enabled="true"/>
+  </Project>
+  <BugInstance type="MDM_BIGDECIMAL_EQUALS" priority="2" rank="7" abbrev="MDM" category="CORRECTNESS">
+    <Class classname="lab4.TestBigDecimalEquals">
+      <SourceLine classname="lab4.TestBigDecimalEquals" start="5" end="10" sourcefile="TestBigDecimalEquals.java" sourcepath="lab4/TestBigDecimalEquals.java"/>
+    </Class>
+    <Method classname="lab4.TestBigDecimalEquals" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestBigDecimalEquals" start="7" end="10" startBytecode="0" endBytecode="105" sourcefile="TestBigDecimalEquals.java" sourcepath="lab4/TestBigDecimalEquals.java"/>
+    </Method>
+    <Method classname="java.math.BigDecimal" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.math.BigDecimal" start="3227" end="3242" startBytecode="0" endBytecode="304" sourcefile="BigDecimal.java" sourcepath="java/math/BigDecimal.java"/>
+    </Method>
+    <SourceLine classname="lab4.TestBigDecimalEquals" start="9" end="9" startBytecode="25" endBytecode="25" sourcefile="TestBigDecimalEquals.java" sourcepath="lab4/TestBigDecimalEquals.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:24:01 +0500" total_classes="8" referenced_classes="39" total_bugs="1" total_size="86" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="5.92" clock_seconds="3.06" peak_mbytes="144.83" alloc_mbytes="1496.00" gc_seconds="0.09" priority_2="1">
+    <PackageStats package="lab4" total_bugs="1" total_types="8" total_size="86" priority_2="1">
+      <ClassStats class="lab4.TestBigDecimal" sourceFile="TestBigDecimal.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="lab4.TestBigDecimalEquals" sourceFile="TestBigDecimalEquals.java" interface="false" size="8" bugs="1" priority_2="1"/>
+      <ClassStats class="lab4.TestDate" sourceFile="TestDate.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="lab4.TestNewline" sourceFile="TestNewline.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="lab4.TestTernary" sourceFile="TestTernary.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryNull" sourceFile="TestTernaryNull.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryPrimitive" sourceFile="TestTernaryPrimitive.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="lab4.TestTernarySimpleNull" sourceFile="TestTernarySimpleNull.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="553" invocations="585" avgMicrosecondsPerInvocation="945" maxMicrosecondsPerInvocation="20055" standardDeviationMicrosecondsPerInvocation="2105"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="179" invocations="39" avgMicrosecondsPerInvocation="4591" maxMicrosecondsPerInvocation="26392" standardDeviationMicrosecondsPerInvocation="6468"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectStatistics" totalMilliseconds="171" invocations="39" avgMicrosecondsPerInvocation="4390" maxMicrosecondsPerInvocation="25955" standardDeviationMicrosecondsPerInvocation="6091"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="143" invocations="200" avgMicrosecondsPerInvocation="715" maxMicrosecondsPerInvocation="14403" standardDeviationMicrosecondsPerInvocation="1647"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="122" invocations="148" avgMicrosecondsPerInvocation="826" maxMicrosecondsPerInvocation="8976" standardDeviationMicrosecondsPerInvocation="1314"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectNullableMethodStatus" totalMilliseconds="116" invocations="39" avgMicrosecondsPerInvocation="2976" maxMicrosecondsPerInvocation="17415" standardDeviationMicrosecondsPerInvocation="4630"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="111" invocations="39" avgMicrosecondsPerInvocation="2848" maxMicrosecondsPerInvocation="14555" standardDeviationMicrosecondsPerInvocation="3628"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="101" invocations="610" avgMicrosecondsPerInvocation="165" maxMicrosecondsPerInvocation="6059" standardDeviationMicrosecondsPerInvocation="444"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="70" invocations="39" avgMicrosecondsPerInvocation="1806" maxMicrosecondsPerInvocation="15654" standardDeviationMicrosecondsPerInvocation="2941"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="67" invocations="545" avgMicrosecondsPerInvocation="123" maxMicrosecondsPerInvocation="6962" standardDeviationMicrosecondsPerInvocation="440"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="57" invocations="39" avgMicrosecondsPerInvocation="1466" maxMicrosecondsPerInvocation="22876" standardDeviationMicrosecondsPerInvocation="3743"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

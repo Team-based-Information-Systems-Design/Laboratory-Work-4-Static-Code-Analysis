@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763841080" analysisTimestamp="1790763939629" release="">
+  <Project projectName="">
+    <Jar>classes</Jar>
+    <SrcDir>/root/shots/src</SrcDir>
+  </Project>
+  <BugInstance type="BX_BOXING_IMMEDIATELY_UNBOXED" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="lab4.TestTernary">
+      <SourceLine classname="lab4.TestTernary" start="3" end="9" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Class>
+    <Method classname="lab4.TestTernary" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestTernary" start="5" end="9" startBytecode="0" endBytecode="175" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Method>
+    <SourceLine classname="lab4.TestTernary" start="6" end="6" startBytecode="23" endBytecode="23" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+  </BugInstance>
+  <BugInstance type="BX_UNBOXED_AND_COERCED_FOR_TERNARY_OPERATOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="lab4.TestTernary">
+      <SourceLine classname="lab4.TestTernary" start="3" end="9" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Class>
+    <Method classname="lab4.TestTernary" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestTernary" start="5" end="9" startBytecode="0" endBytecode="175" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Method>
+    <SourceLine classname="lab4.TestTernary" start="6" end="6" startBytecode="27" endBytecode="27" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+  </BugInstance>
+  <BugInstance type="BX_UNBOXING_IMMEDIATELY_REBOXED" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="lab4.TestTernary">
+      <SourceLine classname="lab4.TestTernary" start="3" end="9" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Class>
+    <Method classname="lab4.TestTernary" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestTernary" start="5" end="9" startBytecode="0" endBytecode="175" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Method>
+    <Method classname="java.lang.Double" name="valueOf" signature="(D)Ljava/lang/Double;" isStatic="true" role="METHOD_CALLED" classAnnotationNames="jdk.internal.ValueBased">
+      <SourceLine classname="java.lang.Double" start="773" end="773" startBytecode="0" endBytecode="50" sourcefile="Double.java" sourcepath="java/lang/Double.java"/>
+    </Method>
+    <SourceLine classname="lab4.TestTernary" start="6" end="6" startBytecode="43" endBytecode="43" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+  </BugInstance>
+  <BugInstance type="DM_FP_NUMBER_CTOR" priority="3" rank="20" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="lab4.TestTernary">
+      <SourceLine classname="lab4.TestTernary" start="3" end="9" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Class>
+    <Method classname="lab4.TestTernary" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestTernary" start="5" end="9" startBytecode="0" endBytecode="175" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Method>
+    <Method classname="java.lang.Double" name="&lt;init&gt;" signature="(D)V" isStatic="false" role="METHOD_CALLED" classAnnotationNames="jdk.internal.ValueBased">
+      <SourceLine classname="java.lang.Double" start="866" end="868" startBytecode="0" endBytecode="69" sourcefile="Double.java" sourcepath="java/lang/Double.java"/>
+    </Method>
+    <Method classname="java.lang.Double" name="valueOf" signature="(D)Ljava/lang/Double;" isStatic="true" role="SHOULD_CALL" classAnnotationNames="jdk.internal.ValueBased">
+      <SourceLine classname="java.lang.Double" start="773" end="773" startBytecode="0" endBytecode="50" sourcefile="Double.java" sourcepath="java/lang/Double.java"/>
+    </Method>
+    <SourceLine classname="lab4.TestTernary" start="6" end="6" startBytecode="37" endBytecode="37" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="lab4.TestTernary">
+      <SourceLine classname="lab4.TestTernary" start="3" end="9" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Class>
+    <Method classname="lab4.TestTernary" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestTernary" start="5" end="9" startBytecode="0" endBytecode="175" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED" classAnnotationNames="jdk.internal.ValueBased">
+      <SourceLine classname="java.lang.Integer" start="1106" end="1108" startBytecode="0" endBytecode="69" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL" classAnnotationNames="jdk.internal.ValueBased">
+      <SourceLine classname="java.lang.Integer" start="1081" end="1083" startBytecode="0" endBytecode="90" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="lab4.TestTernary" start="6" end="6" startBytecode="20" endBytecode="20" sourcefile="TestTernary.java" sourcepath="lab4/TestTernary.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:24:01 +0500" total_classes="8" referenced_classes="39" total_bugs="5" total_size="86" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="4.57" clock_seconds="2.38" peak_mbytes="134.96" alloc_mbytes="1496.00" gc_seconds="0.07" priority_3="1" priority_2="4">
+    <PackageStats package="lab4" total_bugs="5" total_types="8" total_size="86" priority_3="1" priority_2="4">
+      <ClassStats class="lab4.TestBigDecimal" sourceFile="TestBigDecimal.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="lab4.TestBigDecimalEquals" sourceFile="TestBigDecimalEquals.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="lab4.TestDate" sourceFile="TestDate.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="lab4.TestNewline" sourceFile="TestNewline.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="lab4.TestTernary" sourceFile="TestTernary.java" interface="false" size="9" bugs="5" priority_3="1" priority_2="4"/>
+      <ClassStats class="lab4.TestTernaryNull" sourceFile="TestTernaryNull.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryPrimitive" sourceFile="TestTernaryPrimitive.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="lab4.TestTernarySimpleNull" sourceFile="TestTernarySimpleNull.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="452" invocations="589" avgMicrosecondsPerInvocation="768" maxMicrosecondsPerInvocation="19913" standardDeviationMicrosecondsPerInvocation="1854"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="194" invocations="39" avgMicrosecondsPerInvocation="4975" maxMicrosecondsPerInvocation="55697" standardDeviationMicrosecondsPerInvocation="9426"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="115" invocations="39" avgMicrosecondsPerInvocation="2957" maxMicrosecondsPerInvocation="12768" standardDeviationMicrosecondsPerInvocation="3785"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="112" invocations="148" avgMicrosecondsPerInvocation="762" maxMicrosecondsPerInvocation="10105" standardDeviationMicrosecondsPerInvocation="1446"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="86" invocations="591" avgMicrosecondsPerInvocation="146" maxMicrosecondsPerInvocation="4383" standardDeviationMicrosecondsPerInvocation="405"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="72" invocations="546" avgMicrosecondsPerInvocation="132" maxMicrosecondsPerInvocation="4646" standardDeviationMicrosecondsPerInvocation="430"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="65" invocations="72" avgMicrosecondsPerInvocation="910" maxMicrosecondsPerInvocation="14130" standardDeviationMicrosecondsPerInvocation="1991"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="64" invocations="39" avgMicrosecondsPerInvocation="1649" maxMicrosecondsPerInvocation="11841" standardDeviationMicrosecondsPerInvocation="2525"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="62" invocations="39" avgMicrosecondsPerInvocation="1598" maxMicrosecondsPerInvocation="11044" standardDeviationMicrosecondsPerInvocation="2997"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="56" invocations="2" avgMicrosecondsPerInvocation="28228" maxMicrosecondsPerInvocation="53038" standardDeviationMicrosecondsPerInvocation="24810"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="45" invocations="39" avgMicrosecondsPerInvocation="1166" maxMicrosecondsPerInvocation="7578" standardDeviationMicrosecondsPerInvocation="1648"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NumberConstructor" totalMilliseconds="40" invocations="1" avgMicrosecondsPerInvocation="40933" maxMicrosecondsPerInvocation="40933" standardDeviationMicrosecondsPerInvocation="0"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

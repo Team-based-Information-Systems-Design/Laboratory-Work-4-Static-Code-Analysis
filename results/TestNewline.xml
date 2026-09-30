@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763841080" analysisTimestamp="1790763959655" release="">
+  <Project projectName="">
+    <Jar>classes</Jar>
+    <SrcDir>/root/shots/src</SrcDir>
+  </Project>
+  <BugInstance type="VA_FORMAT_STRING_USES_NEWLINE" priority="2" rank="20" abbrev="FS" category="BAD_PRACTICE">
+    <Class classname="lab4.TestNewline">
+      <SourceLine classname="lab4.TestNewline" start="3" end="7" sourcefile="TestNewline.java" sourcepath="lab4/TestNewline.java"/>
+    </Class>
+    <Method classname="lab4.TestNewline" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="lab4.TestNewline" start="5" end="7" startBytecode="0" endBytecode="76" sourcefile="TestNewline.java" sourcepath="lab4/TestNewline.java"/>
+    </Method>
+    <Method classname="java.io.PrintStream" name="printf" signature="(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintStream" start="1245" end="1245" startBytecode="0" endBytecode="68" sourcefile="PrintStream.java" sourcepath="java/io/PrintStream.java"/>
+    </Method>
+    <String value="%s\n" role="STRING_FORMAT_STRING"/>
+    <SourceLine classname="lab4.TestNewline" start="5" end="5" startBytecode="14" endBytecode="14" sourcefile="TestNewline.java" sourcepath="lab4/TestNewline.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:24:01 +0500" total_classes="8" referenced_classes="39" total_bugs="1" total_size="86" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="3.93" clock_seconds="2.04" peak_mbytes="135.57" alloc_mbytes="1496.00" gc_seconds="0.06" priority_2="1">
+    <PackageStats package="lab4" total_bugs="1" total_types="8" total_size="86" priority_2="1">
+      <ClassStats class="lab4.TestBigDecimal" sourceFile="TestBigDecimal.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="lab4.TestBigDecimalEquals" sourceFile="TestBigDecimalEquals.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="lab4.TestDate" sourceFile="TestDate.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="lab4.TestNewline" sourceFile="TestNewline.java" interface="false" size="7" bugs="1" priority_2="1"/>
+      <ClassStats class="lab4.TestTernary" sourceFile="TestTernary.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryNull" sourceFile="TestTernaryNull.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryPrimitive" sourceFile="TestTernaryPrimitive.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="lab4.TestTernarySimpleNull" sourceFile="TestTernarySimpleNull.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="458" invocations="591" avgMicrosecondsPerInvocation="776" maxMicrosecondsPerInvocation="15110" standardDeviationMicrosecondsPerInvocation="1690"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="162" invocations="39" avgMicrosecondsPerInvocation="4174" maxMicrosecondsPerInvocation="29656" standardDeviationMicrosecondsPerInvocation="6608"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="112" invocations="39" avgMicrosecondsPerInvocation="2880" maxMicrosecondsPerInvocation="26281" standardDeviationMicrosecondsPerInvocation="4883"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="109" invocations="148" avgMicrosecondsPerInvocation="738" maxMicrosecondsPerInvocation="8360" standardDeviationMicrosecondsPerInvocation="1276"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="104" invocations="593" avgMicrosecondsPerInvocation="176" maxMicrosecondsPerInvocation="18949" standardDeviationMicrosecondsPerInvocation="998"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="66" invocations="39" avgMicrosecondsPerInvocation="1704" maxMicrosecondsPerInvocation="12040" standardDeviationMicrosecondsPerInvocation="2895"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="65" invocations="72" avgMicrosecondsPerInvocation="905" maxMicrosecondsPerInvocation="12166" standardDeviationMicrosecondsPerInvocation="1950"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="59" invocations="551" avgMicrosecondsPerInvocation="108" maxMicrosecondsPerInvocation="4173" standardDeviationMicrosecondsPerInvocation="323"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="43" invocations="2" avgMicrosecondsPerInvocation="21716" maxMicrosecondsPerInvocation="42223" standardDeviationMicrosecondsPerInvocation="20507"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="41" invocations="39" avgMicrosecondsPerInvocation="1072" maxMicrosecondsPerInvocation="8708" standardDeviationMicrosecondsPerInvocation="1909"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763967656" analysisTimestamp="1790763969588" release="">
+  <Project projectName="">
+    <Jar>lcls</Jar>
+    <AuxClasspathEntry>/root/lab4/projects/lab4_library/lib/jsr305-2.0.0.jar</AuxClasspathEntry>
+    <SrcDir>/root/lab4/projects/lab4_library/src</SrcDir>
+  </Project>
+  <BugInstance type="NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" priority="2" rank="8" abbrev="NP" category="CORRECTNESS">
+    <Class classname="bookstore.Book">
+      <SourceLine classname="bookstore.Book" start="6" end="21" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Class>
+    <Method classname="bookstore.Book" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="bookstore.Book" start="6" end="6" startBytecode="0" endBytecode="46" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Method>
+    <Field classname="bookstore.Book" name="author" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="bookstore.Book" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" priority="2" rank="8" abbrev="NP" category="CORRECTNESS">
+    <Class classname="bookstore.Book">
+      <SourceLine classname="bookstore.Book" start="6" end="21" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Class>
+    <Method classname="bookstore.Book" name="&lt;init&gt;" signature="()V" isStatic="false">
+      <SourceLine classname="bookstore.Book" start="6" end="6" startBytecode="0" endBytecode="46" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Method>
+    <Field classname="bookstore.Book" name="title" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="bookstore.Book" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NP_NONNULL_RETURN_VIOLATION" priority="1" rank="6" abbrev="NP" category="CORRECTNESS">
+    <Class classname="bookstore.Book">
+      <SourceLine classname="bookstore.Book" start="6" end="21" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Class>
+    <Method classname="bookstore.Book" name="getSubtitle" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="bookstore.Book" start="17" end="17" startBytecode="0" endBytecode="46" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Method>
+    <Field classname="bookstore.Book" name="subtitle" signature="Ljava/lang/String;" isStatic="false" role="FIELD_CONTAINS_VALUE">
+      <SourceLine classname="bookstore.Book" sourcefile="Book.java" sourcepath="bookstore/Book.java"/>
+    </Field>
+    <SourceLine classname="bookstore.Book" start="17" end="17" startBytecode="4" endBytecode="4" sourcefile="Book.java" sourcepath="bookstore/Book.java" role="SOURCE_LINE_RETURNED"/>
+    <SourceLine classname="bookstore.Book" start="17" end="17" startBytecode="4" endBytecode="4" sourcefile="Book.java" sourcepath="bookstore/Book.java" role="SOURCE_LINE_KNOWN_NULL"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE">
+    <Class classname="bookstore.Library$ComparatorImpl">
+      <SourceLine classname="bookstore.Library$ComparatorImpl" start="37" end="50" sourcefile="Library.java" sourcepath="bookstore/Library.java"/>
+    </Class>
+    <Method classname="bookstore.Library$ComparatorImpl" name="compare" signature="(Lbookstore/Book;Lbookstore/Book;)I" isStatic="false">
+      <SourceLine classname="bookstore.Library$ComparatorImpl" start="40" end="50" startBytecode="0" endBytecode="27" sourcefile="Library.java" sourcepath="bookstore/Library.java"/>
+    </Method>
+    <LocalVariable name="r" register="3" pc="48" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="bookstore.Library$ComparatorImpl" start="48" end="48" startBytecode="47" endBytecode="47" sourcefile="Library.java" sourcepath="bookstore/Library.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="r"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:26:07 +0500" total_classes="3" referenced_classes="42" total_bugs="4" total_size="41" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="4.11" clock_seconds="2.18" peak_mbytes="138.98" alloc_mbytes="1496.00" gc_seconds="0.08" priority_2="3" priority_1="1">
+    <PackageStats package="bookstore" total_bugs="4" total_types="3" total_size="41" priority_2="3" priority_1="1">
+      <ClassStats class="bookstore.Book" sourceFile="Book.java" interface="false" size="12" bugs="3" priority_2="2" priority_1="1"/>
+      <ClassStats class="bookstore.Library" sourceFile="Library.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="bookstore.Library$ComparatorImpl" sourceFile="Library.java" interface="false" size="12" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="433" invocations="573" avgMicrosecondsPerInvocation="755" maxMicrosecondsPerInvocation="31571" standardDeviationMicrosecondsPerInvocation="1999"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="135" invocations="42" avgMicrosecondsPerInvocation="3216" maxMicrosecondsPerInvocation="35916" standardDeviationMicrosecondsPerInvocation="7176"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="89" invocations="531" avgMicrosecondsPerInvocation="168" maxMicrosecondsPerInvocation="23359" standardDeviationMicrosecondsPerInvocation="1124"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="88" invocations="42" avgMicrosecondsPerInvocation="2113" maxMicrosecondsPerInvocation="18504" standardDeviationMicrosecondsPerInvocation="3678"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="85" invocations="577" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="9554" standardDeviationMicrosecondsPerInvocation="540"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="82" invocations="137" avgMicrosecondsPerInvocation="604" maxMicrosecondsPerInvocation="9725" standardDeviationMicrosecondsPerInvocation="1274"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="70" invocations="10" avgMicrosecondsPerInvocation="7034" maxMicrosecondsPerInvocation="55710" standardDeviationMicrosecondsPerInvocation="16506"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="56" invocations="42" avgMicrosecondsPerInvocation="1343" maxMicrosecondsPerInvocation="15281" standardDeviationMicrosecondsPerInvocation="2836"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="54" invocations="10" avgMicrosecondsPerInvocation="5486" maxMicrosecondsPerInvocation="29013" standardDeviationMicrosecondsPerInvocation="9290"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="43" invocations="72" avgMicrosecondsPerInvocation="605" maxMicrosecondsPerInvocation="12579" standardDeviationMicrosecondsPerInvocation="1641"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="35" invocations="42" avgMicrosecondsPerInvocation="838" maxMicrosecondsPerInvocation="9053" standardDeviationMicrosecondsPerInvocation="1923"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="34" invocations="42" avgMicrosecondsPerInvocation="832" maxMicrosecondsPerInvocation="8938" standardDeviationMicrosecondsPerInvocation="1745"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="32" invocations="42" avgMicrosecondsPerInvocation="777" maxMicrosecondsPerInvocation="17524" standardDeviationMicrosecondsPerInvocation="2753"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="26" invocations="42" avgMicrosecondsPerInvocation="642" maxMicrosecondsPerInvocation="6077" standardDeviationMicrosecondsPerInvocation="1367"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="26" invocations="42" avgMicrosecondsPerInvocation="639" maxMicrosecondsPerInvocation="9954" standardDeviationMicrosecondsPerInvocation="1842"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
