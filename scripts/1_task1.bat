@@ -1,2 +1,2 @@
 @echo off
-call "%~dp0common.bat" lab4_task1 UTF-8
+call "%~dp0common.bat" task1 src UTF-8

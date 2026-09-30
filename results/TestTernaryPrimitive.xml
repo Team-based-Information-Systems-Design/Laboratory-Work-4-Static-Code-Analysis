@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763841080" analysisTimestamp="1790763947754" release="">
+  <Project projectName="">
+    <Jar>classes</Jar>
+    <SrcDir>/root/shots/src</SrcDir>
+  </Project>
+  <BugInstance type="NP_NULL_ON_SOME_PATH" priority="1" rank="6" abbrev="NP" category="CORRECTNESS">
+    <Class classname="lab4.TestTernaryPrimitive">
+      <SourceLine classname="lab4.TestTernaryPrimitive" start="3" end="14" sourcefile="TestTernaryPrimitive.java" sourcepath="lab4/TestTernaryPrimitive.java"/>
+    </Class>
+    <Method classname="lab4.TestTernaryPrimitive" name="getVal" signature="(I)D" isStatic="false">
+      <SourceLine classname="lab4.TestTernaryPrimitive" start="7" end="7" startBytecode="0" endBytecode="95" sourcefile="TestTernaryPrimitive.java" sourcepath="lab4/TestTernaryPrimitive.java"/>
+    </Method>
+    <String value="null" role="STRING_NONSTRING_CONSTANT"/>
+    <SourceLine classname="lab4.TestTernaryPrimitive" start="7" end="7" startBytecode="26" endBytecode="26" sourcefile="TestTernaryPrimitive.java" sourcepath="lab4/TestTernaryPrimitive.java" role="SOURCE_LINE_DEREF"/>
+    <SourceLine classname="lab4.TestTernaryPrimitive" start="7" end="7" startBytecode="14" endBytecode="14" sourcefile="TestTernaryPrimitive.java" sourcepath="lab4/TestTernaryPrimitive.java" role="SOURCE_LINE_KNOWN_NULL"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:24:01 +0500" total_classes="8" referenced_classes="39" total_bugs="1" total_size="86" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="3.81" clock_seconds="2.07" peak_mbytes="135.62" alloc_mbytes="1496.00" gc_seconds="0.06" priority_1="1">
+    <PackageStats package="lab4" total_bugs="1" total_types="8" total_size="86" priority_1="1">
+      <ClassStats class="lab4.TestBigDecimal" sourceFile="TestBigDecimal.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="lab4.TestBigDecimalEquals" sourceFile="TestBigDecimalEquals.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="lab4.TestDate" sourceFile="TestDate.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="lab4.TestNewline" sourceFile="TestNewline.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="lab4.TestTernary" sourceFile="TestTernary.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryNull" sourceFile="TestTernaryNull.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryPrimitive" sourceFile="TestTernaryPrimitive.java" interface="false" size="12" bugs="1" priority_1="1"/>
+      <ClassStats class="lab4.TestTernarySimpleNull" sourceFile="TestTernarySimpleNull.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="469" invocations="589" avgMicrosecondsPerInvocation="797" maxMicrosecondsPerInvocation="31904" standardDeviationMicrosecondsPerInvocation="2179"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="155" invocations="39" avgMicrosecondsPerInvocation="3977" maxMicrosecondsPerInvocation="30092" standardDeviationMicrosecondsPerInvocation="6173"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="94" invocations="591" avgMicrosecondsPerInvocation="160" maxMicrosecondsPerInvocation="20079" standardDeviationMicrosecondsPerInvocation="934"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="90" invocations="548" avgMicrosecondsPerInvocation="164" maxMicrosecondsPerInvocation="26375" standardDeviationMicrosecondsPerInvocation="1207"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="89" invocations="72" avgMicrosecondsPerInvocation="1236" maxMicrosecondsPerInvocation="18692" standardDeviationMicrosecondsPerInvocation="3168"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="88" invocations="39" avgMicrosecondsPerInvocation="2270" maxMicrosecondsPerInvocation="11539" standardDeviationMicrosecondsPerInvocation="2926"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="84" invocations="149" avgMicrosecondsPerInvocation="564" maxMicrosecondsPerInvocation="5665" standardDeviationMicrosecondsPerInvocation="926"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="48" invocations="39" avgMicrosecondsPerInvocation="1242" maxMicrosecondsPerInvocation="10224" standardDeviationMicrosecondsPerInvocation="1972"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="40" invocations="3" avgMicrosecondsPerInvocation="13515" maxMicrosecondsPerInvocation="34504" standardDeviationMicrosecondsPerInvocation="14951"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="33" invocations="39" avgMicrosecondsPerInvocation="856" maxMicrosecondsPerInvocation="6202" standardDeviationMicrosecondsPerInvocation="1541"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="32" invocations="39" avgMicrosecondsPerInvocation="842" maxMicrosecondsPerInvocation="6847" standardDeviationMicrosecondsPerInvocation="1393"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.8.6" sequence="0" timestamp="1790763841080" analysisTimestamp="1790763951571" release="">
+  <Project projectName="">
+    <Jar>classes</Jar>
+    <SrcDir>/root/shots/src</SrcDir>
+  </Project>
+  <BugInstance type="STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE" priority="1" rank="6" abbrev="STCAL" category="MT_CORRECTNESS">
+    <Class classname="lab4.TestDate">
+      <SourceLine classname="lab4.TestDate" start="8" end="36" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Class>
+    <Method classname="lab4.TestDate" name="getDate" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="lab4.TestDate" start="13" end="13" startBytecode="0" endBytecode="55" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Method>
+    <Method classname="java.text.SimpleDateFormat" name="format" signature="(Ljava/util/Date;)Ljava/lang/String;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.text.SimpleDateFormat" sourcefile="SimpleDateFormat.java" sourcepath="java/text/SimpleDateFormat.java"/>
+    </Method>
+    <Field classname="lab4.TestDate" name="format" signature="Ljava/text/DateFormat;" isStatic="true">
+      <SourceLine classname="lab4.TestDate" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Field>
+    <SourceLine classname="lab4.TestDate" start="13" end="13" startBytecode="10" endBytecode="10" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+  </BugInstance>
+  <BugInstance type="STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE" priority="1" rank="6" abbrev="STCAL" category="MT_CORRECTNESS">
+    <Class classname="lab4.TestDate">
+      <SourceLine classname="lab4.TestDate" start="8" end="36" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Class>
+    <Method classname="lab4.TestDate" name="lambda$main$0" signature="(Ljava/util/concurrent/atomic/AtomicInteger;)V" isStatic="true">
+      <SourceLine classname="lab4.TestDate" start="21" end="28" startBytecode="0" endBytecode="166" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Method>
+    <Method classname="java.text.SimpleDateFormat" name="format" signature="(Ljava/util/Date;)Ljava/lang/String;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.text.SimpleDateFormat" sourcefile="SimpleDateFormat.java" sourcepath="java/text/SimpleDateFormat.java"/>
+    </Method>
+    <Field classname="lab4.TestDate" name="format" signature="Ljava/text/DateFormat;" isStatic="true">
+      <SourceLine classname="lab4.TestDate" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Field>
+    <SourceLine classname="lab4.TestDate" start="23" end="23" startBytecode="22" endBytecode="22" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+  </BugInstance>
+  <BugInstance type="STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE" priority="1" rank="6" abbrev="STCAL" category="MT_CORRECTNESS">
+    <Class classname="lab4.TestDate">
+      <SourceLine classname="lab4.TestDate" start="8" end="36" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Class>
+    <Method classname="lab4.TestDate" name="lambda$main$0" signature="(Ljava/util/concurrent/atomic/AtomicInteger;)V" isStatic="true">
+      <SourceLine classname="lab4.TestDate" start="21" end="28" startBytecode="0" endBytecode="166" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Method>
+    <Method classname="java.text.SimpleDateFormat" name="parse" signature="(Ljava/lang/String;)Ljava/util/Date;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.text.SimpleDateFormat" sourcefile="SimpleDateFormat.java" sourcepath="java/text/SimpleDateFormat.java"/>
+    </Method>
+    <Field classname="lab4.TestDate" name="format" signature="Ljava/text/DateFormat;" isStatic="true">
+      <SourceLine classname="lab4.TestDate" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+    </Field>
+    <SourceLine classname="lab4.TestDate" start="23" end="23" startBytecode="19" endBytecode="19" sourcefile="TestDate.java" sourcepath="lab4/TestDate.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Sep 2026 15:24:01 +0500" total_classes="8" referenced_classes="39" total_bugs="3" total_size="86" num_packages="1" java_version="21.0.10" vm_version="21.0.10+7-Ubuntu-124.04" cpu_seconds="4.33" clock_seconds="2.27" peak_mbytes="137.65" alloc_mbytes="1496.00" gc_seconds="0.07" priority_1="3">
+    <PackageStats package="lab4" total_bugs="3" total_types="8" total_size="86" priority_1="3">
+      <ClassStats class="lab4.TestBigDecimal" sourceFile="TestBigDecimal.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="lab4.TestBigDecimalEquals" sourceFile="TestBigDecimalEquals.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="lab4.TestDate" sourceFile="TestDate.java" interface="false" size="27" bugs="3" priority_1="3"/>
+      <ClassStats class="lab4.TestNewline" sourceFile="TestNewline.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="lab4.TestTernary" sourceFile="TestTernary.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryNull" sourceFile="TestTernaryNull.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="lab4.TestTernaryPrimitive" sourceFile="TestTernaryPrimitive.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="lab4.TestTernarySimpleNull" sourceFile="TestTernarySimpleNull.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="417" invocations="594" avgMicrosecondsPerInvocation="703" maxMicrosecondsPerInvocation="15185" standardDeviationMicrosecondsPerInvocation="1687"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="172" invocations="39" avgMicrosecondsPerInvocation="4422" maxMicrosecondsPerInvocation="27364" standardDeviationMicrosecondsPerInvocation="6200"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="131" invocations="39" avgMicrosecondsPerInvocation="3367" maxMicrosecondsPerInvocation="25366" standardDeviationMicrosecondsPerInvocation="5099"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="111" invocations="151" avgMicrosecondsPerInvocation="735" maxMicrosecondsPerInvocation="7551" standardDeviationMicrosecondsPerInvocation="1383"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="108" invocations="596" avgMicrosecondsPerInvocation="181" maxMicrosecondsPerInvocation="20275" standardDeviationMicrosecondsPerInvocation="967"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="95" invocations="551" avgMicrosecondsPerInvocation="173" maxMicrosecondsPerInvocation="33977" standardDeviationMicrosecondsPerInvocation="1487"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="84" invocations="72" avgMicrosecondsPerInvocation="1175" maxMicrosecondsPerInvocation="18157" standardDeviationMicrosecondsPerInvocation="2636"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="69" invocations="39" avgMicrosecondsPerInvocation="1779" maxMicrosecondsPerInvocation="12333" standardDeviationMicrosecondsPerInvocation="2953"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="59" invocations="5" avgMicrosecondsPerInvocation="11876" maxMicrosecondsPerInvocation="31597" standardDeviationMicrosecondsPerInvocation="11975"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="46" invocations="39" avgMicrosecondsPerInvocation="1189" maxMicrosecondsPerInvocation="11730" standardDeviationMicrosecondsPerInvocation="2428"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="42" invocations="39" avgMicrosecondsPerInvocation="1089" maxMicrosecondsPerInvocation="10668" standardDeviationMicrosecondsPerInvocation="2152"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="38" invocations="39" avgMicrosecondsPerInvocation="974" maxMicrosecondsPerInvocation="8070" standardDeviationMicrosecondsPerInvocation="1900"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
