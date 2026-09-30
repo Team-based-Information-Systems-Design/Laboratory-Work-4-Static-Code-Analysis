@@ -1,0 +1,17 @@
+# Сборка и отчёты — создаются в CI, в репозиторий не кладём
+*.class
+*.jar
+build/
+reports/
+scripts/build/
+spotbugs-*/
+spotbugs.tgz
+
+# Настройки сред разработки
+.vscode/
+.idea/
+*.iml
+
+# Служебные файлы ОС
+.DS_Store
+Thumbs.db
