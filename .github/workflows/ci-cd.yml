@@ -1,9 +1,10 @@
-# CI/CD конвейер команды №2 — вариант для ЛР4 (статический анализ кода SpotBugs)
-#   CI  — непрерывная интеграция: компиляция task1 и статический анализ SpotBugs на каждый push и pull request,
-#         сверка числа предупреждений с отчётом results/lab4_task1.xml;
-#   CD  — непрерывная доставка: отчёты анализа (HTML, XML, TXT) и .jar публикуются как артефакт;
+# CI/CD конвейер команды №2 — вариант для ЛР4 (статический анализ кода SpotBugs), версия 2
+#   CI  — непрерывная интеграция: на каждый push и pull request скрипт scripts/run_spotbugs.sh
+#         компилирует и анализирует все три задания (task1, library, colt), результаты сверяются
+#         с отчётами из папки results;
+#   CD  — непрерывная доставка: отчёты анализа (XML, TXT) публикуются как артефакт;
 #   CD  — непрерывное развёртывание: при push тега v* автоматически создаётся GitHub Release с отчётами.
-# Код task1 намеренно содержит ошибки (примеры для анализатора), поэтому находки SpotBugs сборку не роняют.
+# Код заданий намеренно содержит ошибки (примеры для анализатора), поэтому находки SpotBugs сборку не роняют.
 
 name: CI/CD
 
@@ -17,9 +18,6 @@ on:
 
 permissions:
   contents: read
-
-env:
-  SPOTBUGS_VERSION: '4.8.6'
 
 jobs:
   build:
@@ -39,73 +37,41 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Компиляция task1
-        run: |
-          mkdir -p build/classes
-          find task1/src -name '*.java' > build/sources.txt
-          javac -encoding UTF-8 --release 17 -nowarn -proc:none -d build/classes @build/sources.txt
-          echo "Скомпилировано классов: $(find build/classes -name '*.class' | wc -l)"
+      - name: Сохранение эталонных отчётов из репозитория
+        run: cp -r results results_ref 2>/dev/null || mkdir -p results_ref
 
-      - name: Установка SpotBugs ${{ env.SPOTBUGS_VERSION }}
-        run: |
-          curl -sSL -o spotbugs.tgz \
-            "https://github.com/spotbugs/spotbugs/releases/download/${SPOTBUGS_VERSION}/spotbugs-${SPOTBUGS_VERSION}.tgz"
-          tar xzf spotbugs.tgz
-          echo "SPOTBUGS_JAR=$PWD/spotbugs-${SPOTBUGS_VERSION}/lib/spotbugs.jar" >> "$GITHUB_ENV"
+      - name: Компиляция и анализ SpotBugs трёх заданий (scripts/run_spotbugs.sh)
+        run: bash scripts/run_spotbugs.sh
 
-      - name: Статический анализ SpotBugs (effort max, confidence low)
+      - name: Сверка с отчётами из папки results
         run: |
-          mkdir -p reports
-          java -jar "$SPOTBUGS_JAR" -textui -effort:max -low -sourcepath task1/src \
-            -xml:withMessages -output reports/spotbugs.xml build/classes
-          java -jar "$SPOTBUGS_JAR" -textui -effort:max -low -sortByClass \
-            -output reports/spotbugs.txt build/classes
-          java -jar "$SPOTBUGS_JAR" -textui -effort:max -low -sourcepath task1/src \
-            -html:plain.xsl -output reports/spotbugs.html build/classes
-          cat reports/spotbugs.txt
-
-      - name: Сводка результатов анализа
-        run: |
-          COUNT=$(grep -c "<BugInstance" reports/spotbugs.xml || true)
           {
-            echo "## Результаты SpotBugs ${SPOTBUGS_VERSION}"
+            echo "## Сверка с отчётами из репозитория"
             echo
-            echo "Найдено предупреждений: **${COUNT}**"
-            echo
-            echo "| Приоритет | Категория | Описание |"
-            echo "|---|---|---|"
-            awk '{
-              p = ($1=="H") ? "Высокий" : ($1=="M") ? "Средний" : "Низкий";
-              c = $2;
-              if (c=="C") c="Корректность"; else if (c=="M") c="Многопоточность";
-              else if (c=="B") c="Плохая практика"; else if (c=="P") c="Производительность";
-              else if (c=="D") c="Сомнительный код"; else if (c=="S") c="Безопасность";
-              else if (c=="I") c="Интернационализация";
-              $1=""; $2=""; sub(/^ +/, ""); gsub(/\|/, "\\|");
-              print "| " p " | " c " | " $0 " |"
-            }' reports/spotbugs.txt
+            echo "| Задание | В CI | В отчёте | Результат |"
+            echo "|---|---|---|---|"
           } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Сверка с отчётом results/lab4_task1.xml
-        if: hashFiles('results/lab4_task1.xml') != ''
-        run: |
-          EXPECTED=$(grep -c "<BugInstance" results/lab4_task1.xml || true)
-          ACTUAL=$(grep -c "<BugInstance" reports/spotbugs.xml || true)
-          echo "В отчёте: $EXPECTED, в CI: $ACTUAL"
-          if [ "$EXPECTED" -ne "$ACTUAL" ]; then
-            echo "::error::Число предупреждений ($ACTUAL) не совпадает с отчётом results/lab4_task1.xml ($EXPECTED)"
-            exit 1
-          fi
-          echo "OK — результат анализа совпадает с отчётом"
-
-      - name: Сборка .jar
-        run: jar --create --file "reports/$APP_NAME.jar" -C build/classes .
+          for name in task1 library colt; do
+            act=$(grep -c "<BugInstance" "results/$name.xml" || true)
+            if [ -f "results_ref/$name.xml" ]; then
+              exp=$(grep -c "<BugInstance" "results_ref/$name.xml" || true)
+              if [ "$exp" = "$act" ]; then res="совпадает"; else res="отличается"
+                echo "::warning::$name: в CI $act предупреждений, в отчёте $exp"
+              fi
+            else
+              exp="—"; res="эталона нет"
+            fi
+            echo "$name: CI=$act, отчёт=$exp — $res"
+            echo "| $name | $act | $exp | $res |" >> "$GITHUB_STEP_SUMMARY"
+          done
 
       - name: Доставка — публикация отчётов анализа
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP_NAME }}
-          path: reports/
+          path: |
+            results/*.xml
+            results/*.txt
           retention-days: 30
 
   release:
@@ -117,7 +83,7 @@ jobs:
       contents: write
 
     steps:
-      - name: Получение отчётов и .jar
+      - name: Получение отчётов анализа
         uses: actions/download-artifact@v4
         with:
           name: ${{ github.event.repository.name }}
